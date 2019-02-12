@@ -1,5 +1,5 @@
 # momocentral
-A set of programming problems &amp; answers written in the MokoM language, (an invented programming language). 
+A set of programming problems I cracked from the momocentral.com website written in the MokoM language, (an invented programming language). 
 
 ## Question 1 - Test Array
 
