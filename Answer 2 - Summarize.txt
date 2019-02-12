@@ -1,0 +1,35 @@
+var summarize = function(array) {
+	var i = 0
+	var sum = 0
+	var newArray = array()   
+	while(i < length(array)) {
+		if(verifyArrayAsValid(get(array,i))) {
+			sum = sumUpArray(get(array,i))
+			newArray = insert(newArray, length(newArray), sum)
+		}
+		i = i + 1
+	}
+	return newArray
+}
+
+var verifyArrayAsValid = function(array) {
+	var i = 0
+	var status = true
+	while(i < length(array)) {
+		if(get(array,i) <= 0) {
+			status = false
+		}
+		i = i + 1
+	}
+	return status
+}
+
+var sumUpArray = function(array) {
+	var i = 0
+	var sum = 0
+	while(i < length(array)) {
+		sum = sum + get(array,i)
+		i = i + 1
+	}
+	return sum
+}
