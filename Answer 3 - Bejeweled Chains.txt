@@ -1,0 +1,85 @@
+var count_chains = function(array) {
+	var i = 0
+	var numberOfChains = 0
+	
+	//Count Chains for original orientation
+	while(i < length(array)) {
+		numberOfChains = numberOfChains + countCompleteChains(get(array,i))
+		i = i + 1
+	}
+	
+	//Change Array's Orientation from Horizontal to Vertical
+	array = changeArrayOrientation(array)
+	
+	//Count Chains for new array orientation
+	i = 0
+	while(i < length(array)) {
+		numberOfChains = numberOfChains + countCompleteChains(get(array,i))
+		i = i + 1
+	}
+	return numberOfChains
+}
+
+var countCompleteChains = function(array) {
+	var i = 0
+	var j = 0
+	var currentNumber = 0
+	var numberOfSameItems = 1
+	var numberOfChains = 0
+	while(i < length(array)) {
+		currentNumber = get(array,i)
+		j = i + 1
+		if(j != length(array)) {
+			if(currentNumber == get(array,j)) {
+				numberOfSameItems = numberOfSameItems + 1
+				if(numberOfSameItems == 3) {
+					numberOfChains = numberOfChains + 1
+				}
+			} else {
+                //Once the number is not the same reset numberOfSameItems
+				numberOfSameItems = 1
+			}
+		}
+		i = i + 1
+	}
+	return numberOfChains
+}
+
+var changeArrayOrientation = function(array) {
+	var i = 0
+	var k = 0
+	var currentArray = array()
+	var intermediateArray = array()
+	var childArray = get(array, 0)
+	var childArray_length = length(childArray)
+
+  //Transfer item of each subarray into intermediate array for swapping
+	while(i < length(array)) {
+		currentArray = get(array, i)
+		var j = 0
+		while(j < length(currentArray)) {
+			intermediateArray = insert(intermediateArray, k, get(currentArray, j))
+			k = k + 1
+			j = j + 1
+		}
+		i = i + 1
+	}
+	
+
+  //Perform the swap 
+	var l = 0
+	var swappedArray = array()
+	while(l < childArray_length) {
+		var dynamicArray = array()
+		var m = 0
+		var n = l
+		while(n < length(intermediateArray)) {
+			dynamicArray = insert(dynamicArray, m, get(intermediateArray, n))
+			n = n + childArray_length
+			m = m + 1
+		}
+		swappedArray = insert(swappedArray, l, dynamicArray)
+		l = l + 1
+	}
+	return swappedArray
+}
