@@ -12,6 +12,7 @@ You may assume that your function will always be given a non-empty array, and yo
 Your final solution should just define the test_array function. You don't need to call it in any way, and you should not print anything.
 
 ## Answer 1 - Test Array
+
 To solve this problem, we would have to make use of the proprietary length and get functions like so: 
 ```
 var test_array = function(array) {	
@@ -62,4 +63,45 @@ print summarize(array(array(1,2,3,4),array(2,3,4,5),array(5,6,-3)))
 Example expected output:
 ```
 [10,14]
+```
+
+## Answer 2 - Summarize
+
+To solve this problem, we would create 2 custom functions of our own verifyArrayAsValid() and sumUpArray()
+```
+var summarize = function(array) {
+	var i = 0
+	var sum = 0
+	var newArray = array()   
+	while(i < length(array)) {
+		if(verifyArrayAsValid(get(array,i))) {
+			sum = sumUpArray(get(array,i))
+			newArray = insert(newArray, length(newArray), sum)
+		}
+		i = i + 1
+	}
+	return newArray
+}
+
+var verifyArrayAsValid = function(array) {
+	var i = 0
+	var status = true
+	while(i < length(array)) {
+		if(get(array,i) <= 0) {
+			status = false
+		}
+		i = i + 1
+	}
+	return status
+}
+
+var sumUpArray = function(array) {
+	var i = 0
+	var sum = 0
+	while(i < length(array)) {
+		sum = sum + get(array,i)
+		i = i + 1
+	}
+	return sum
+}
 ```
