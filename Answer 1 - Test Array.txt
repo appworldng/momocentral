@@ -1,0 +1,10 @@
+var test_array = function(array) {
+	var lastvalue
+	var index = length(array) - 1
+	lastvalue = get(array, index)
+	if(lastvalue > 10) {
+		return lastvalue
+	} else {	
+		return false
+	}
+}
