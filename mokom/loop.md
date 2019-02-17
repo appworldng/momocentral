@@ -1,3 +1,5 @@
+# Loops
+
 Only while loops are presently supported (note that one can also create loop behavior with recursive functions). The syntax is simple: the while keyword followed by a boolean expression enclosed in paranthesis, and then a code block to be repeatedly executed while the boolean expression evaluates to true.
 
 The break and continue keywords can be used at any time within the loop block as an individual statement. break immediately exits the current loop, whereas continue starts the loop block again from the beginning ignoring any statements below it.
