@@ -45,7 +45,7 @@ The MokoM programming language is a minimalistic programming language that hopef
 	print length(ar)                        // length of array, 2
   ```
 
-Quick language notes:
+## Quick language notes:
 
 One statement per line.
 
@@ -57,7 +57,7 @@ Statically scoped
 
 All expressions are evaluated before assignment/function passing. Lazy evaluation is not supported.
 
-Short-circuit evaluation is not currently supported!
+**Short-circuit evaluation is not currently supported!**
 
 Functions are closures and are first class values. There is no syntactic sugar for named function definition, so it has to be done in "var funcname = function() { .." format.
 
@@ -78,5 +78,7 @@ length(arr) to get the length of the array
 other operations should be derivable from these basic operations.
 
 **Everything is passed by value including arrays**. None of the array manipulation functions actually mutate the argument array but creates and returns a new array
+
 Only single line comments with // are supported
+
 for loops are not supported
