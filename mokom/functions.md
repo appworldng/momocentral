@@ -11,21 +11,21 @@ Note that functions are first class values and are anonymous by default - there 
 The return keyword is used to immediately 'return' from the function, ignoring all statements after the return statement, and returning the given expression's evaluated value as the return value of the function.return can be used alone without an accompanying expression.
 
 ```
-  var functname = function(arg1, arg2) {
-	  return arg1 + arg2
-	  print "this is ignored"
-	}
+var functname = function(arg1, arg2) {
+  return arg1 + arg2
+  print "this is ignored"
+}
 
-	var functname2 = function(arg1, arg2) {
-	  return function(arg3) {
-	     return arg1 + arg2 + arg3
-	  }
-	}
+var functname2 = function(arg1, arg2) {
+  return function(arg3) {
+     return arg1 + arg2 + arg3
+  }
+}
 
-	// this is invalid: function definitions are always anonymous!
-	// function myname(arg1, arg2) {
-	//    return arg1 + arg2
-	// }
+// this is invalid: function definitions are always anonymous!
+// function myname(arg1, arg2) {
+//    return arg1 + arg2
+// }
 ```
 
 ## Calls
@@ -37,41 +37,41 @@ Lazy evaluation is not supported. All arguments are pass-by-value so functions c
 Notably, it is not possible to directly call an anonymous function at definition-time. It is also not possible to call a returned function directly, so the only way to call a function is to assign it to a variable first, then applying the syntax described above to that variable.
 
 ```
-  var functname = function(arg1, arg2) {
-	  return arg1 + arg2
-	  print "this is ignored"
-	}
+var functname = function(arg1, arg2) {
+  return arg1 + arg2
+  print "this is ignored"
+}
 
-	var functname2 = function(arg1, arg2) {
-	  return function(arg3) {
-	     return arg1 + arg2 + arg3
-	  }
-	}
+var functname2 = function(arg1, arg2) {
+  return function(arg3) {
+     return arg1 + arg2 + arg3
+  }
+}
 
-	print functname(3,(4 + 7 - 3 - 4)) // gives 7
-	// print functname2(3,4)(5) // not allowed
-	// print function (arg) {
-	//   return arg
-	// } (1)                    // not allowed
+print functname(3,(4 + 7 - 3 - 4)) // gives 7
+// print functname2(3,4)(5) // not allowed
+// print function (arg) {
+//   return arg
+// } (1)                    // not allowed
 
-	// print functname(1)       // not enough arguments
-	// print functname(1,2,3,4) // too many arguments
+// print functname(1)       // not enough arguments
+// print functname(1,2,3,4) // too many arguments
 
-	var add2 = function(val) {
-	   val = val + 2
-	   return val
-	}
-	var b = 2
-	add2(b)
-	print b   // still 2 because pass by value!
-	b = add2(b)
-	print b   // now b is 4!
+var add2 = function(val) {
+   val = val + 2
+   return val
+}
+var b = 2
+add2(b)
+print b   // still 2 because pass by value!
+b = add2(b)
+print b   // now b is 4!
 
-	var apply_func_twice = function(func, arg) { // take function as parameter!
-	  arg = func(arg)
-	  arg = func(arg)
-	  return arg
-	}
+var apply_func_twice = function(func, arg) { // take function as parameter!
+  arg = func(arg)
+  arg = func(arg)
+  return arg
+}
 
-	print apply_func_twice(add2, 5)         // outputs 9
+print apply_func_twice(add2, 5)         // outputs 9
 ```
