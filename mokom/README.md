@@ -57,17 +57,15 @@ print length(ar)                        // length of array, 2
 </ul>
 
 **Arrays are manipulated with 6 basic calls:**
-
-```
-array() to create a new array
-get(arr, index) to get the value at the index
-set(arr, index, val) to set the value at the index
-insert(arr, index, val) to insert a value at that index
-remove(arr, index) to remove the value at that index
-length(arr) to get the length of the array
-```
-
-other operations should be derivable from these basic operations.
+<ul>
+  <li>array() to create a new array</li>
+  <li>get(arr, index) to get the value at the index</li>
+  <li>set(arr, index, val) to set the value at the index</li>
+  <li>insert(arr, index, val) to insert a value at that index</li>
+  <li>remove(arr, index) to remove the value at that index</li>
+  <li>length(arr) to get the length of the array</li>
+  <li>other operations should be derivable from these basic operations.</li>
+</ul>
 
 **Everything is passed by value including arrays**. None of the array manipulation functions actually mutate the argument array but creates and returns a new array
 <ul>
