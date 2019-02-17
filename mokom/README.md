@@ -46,21 +46,37 @@ The MokoM programming language is a minimalistic programming language that hopef
   ```
 
 Quick language notes:
+
 One statement per line.
+
 Variables are dynamically typed, there are 5 basic types: number, string, boolean, function, array
+
 New variables need to be declared with 'var'
+
 Statically scoped
+
 All expressions are evaluated before assignment/function passing. Lazy evaluation is not supported.
+
 Short-circuit evaluation is not currently supported!
+
 Functions are closures and are first class values. There is no syntactic sugar for named function definition, so it has to be done in "var funcname = function() { .." format.
+
 Arrays are manipulated with 6 basic calls:
+
 array() to create a new array
+
 get(arr, index) to get the value at the index
+
 set(arr, index, val) to set the value at the index
+
 insert(arr, index, val) to insert a value at that index
+
 remove(arr, index) to remove the value at that index
+
 length(arr) to get the length of the array
+
 other operations should be derivable from these basic operations.
+
 **Everything is passed by value including arrays**. None of the array manipulation functions actually mutate the argument array but creates and returns a new array
 Only single line comments with // are supported
 for loops are not supported
