@@ -44,8 +44,8 @@ The MokoM programming language is a minimalistic programming language that hopef
 	print ar                                // [bye, hello]
 	print length(ar)                        // length of array, 2
   ```
-  
-  Quick language notes:
+
+Quick language notes:
 One statement per line.
 Variables are dynamically typed, there are 5 basic types: number, string, boolean, function, array
 New variables need to be declared with 'var'
