@@ -10,34 +10,34 @@ Examples of valid code blocks:
 
 ```
 if (1 == 1) {
-	  print "this is a"
-	  print "code block"
-	}
+  print "this is a"
+  print "code block"
+}
 
-	if (1 == 1) { print "this is a"
-	  print "code block"
-	}
+if (1 == 1) { print "this is a"
+  print "code block"
+}
 
-	if (1 == 1)
-	{
-	  print "this is a"
+if (1 == 1)
+{
+  print "this is a"
 
-	  print "code block"
-	}
+  print "code block"
+}
 
-	if (1 == 1)
-	{ print "hello"
-	} elif (2 == 1) {
-	  print "hi again"
-	}
-	else
-	{
-	  print "else clause"
-	}
+if (1 == 1)
+{ print "hello"
+} elif (2 == 1) {
+  print "hi again"
+}
+else
+{
+  print "else clause"
+}
 
-	var f = function(n)
-	  {
-	  print n
-	  print "Haha"
-	  }
+var f = function(n)
+  {
+  print n
+  print "Haha"
+  }
  ```
