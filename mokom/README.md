@@ -43,7 +43,7 @@ print ar                                // [55, bye, hello]
 ar = remove(ar, 0)                      // remove value at index 0
 print ar                                // [bye, hello]
 print length(ar)                        // length of array, 2
-  ```
+```
 
 ## Quick language notes:
 <ul>
@@ -52,28 +52,25 @@ print length(ar)                        // length of array, 2
 <li>New variables need to be declared with 'var'</li>
 <li>Statically scoped</li>
 <li>All expressions are evaluated before assignment/function passing. Lazy evaluation is not supported.</li>
-<li>**Short-circuit evaluation is not currently supported!**</li>
+<li>Short-circuit evaluation is not currently supported!</li>
 <li>Functions are closures and are first class values. There is no syntactic sugar for named function definition, so it has to be done in "var funcname = function() { .." format.</li>
 </ul>
 
 **Arrays are manipulated with 6 basic calls:**
 
+```
 array() to create a new array
-
 get(arr, index) to get the value at the index
-
 set(arr, index, val) to set the value at the index
-
 insert(arr, index, val) to insert a value at that index
-
 remove(arr, index) to remove the value at that index
-
 length(arr) to get the length of the array
+```
 
 other operations should be derivable from these basic operations.
 
 **Everything is passed by value including arrays**. None of the array manipulation functions actually mutate the argument array but creates and returns a new array
-
-Only single line comments with // are supported
-
-for loops are not supported
+<ul>
+  <li>Only single line comments with // are supported</li>
+  <li>for loops are not supported</li>
+</ul>
